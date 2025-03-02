@@ -12,7 +12,8 @@
         // localStorage.clear();
         if (localStorage.getItem("event-name") === null || localStorage.getItem("event-time") === null) {
             localStorage.setItem("event-name", "Event X");
-            localStorage.setItem("event-time", updateDateTime());
+            updateDateTime();
+            localStorage.setItem("event-time", `${(new Date()).getFullYear()+1}-01-01T00:00`);
         }
         document.write(`<p>${localStorage.getItem("event-name")}</p>`);
         document.write(`<h1 id="countdown">${formatCountdown(localStorage.getItem("event-time"))}</h1>`)

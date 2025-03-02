@@ -1,9 +1,9 @@
 function updateDateTime () {
-    if (localStorage.getItem("event-name") !== null && document.getElementById("event-name-input").value == "") {
+    if (localStorage.getItem("event-name") !== null && document.getElementById("event-name-input") !== null && document.getElementById("event-name-input").value == "") {
         document.getElementById("event-name-input").value = localStorage.getItem("event-name");
     }
     if (localStorage.getItem("event-time") !== null && document.getElementById("event-time") !== null) {
-        document.getElementById("event-time").min = localStorage.getItem("event-time");
+        // document.getElementById("event-time").min = localStorage.getItem("event-time");
         document.getElementById("event-time").value = localStorage.getItem("event-time");
         return;
     }
