@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Countdown</title>
+        <link rel="stylesheet" href="styles.css" />
+        <script src="scripts.js"></script>
+    </head>
+    <script>
+        // localStorage.clear();
+        if (localStorage.getItem("event-name") === null || localStorage.getItem("event-time") === null) {
+            localStorage.setItem("event-name", "Event X");
+            localStorage.setItem("event-time", updateDateTime());
+        }
+        document.write(`<p>${localStorage.getItem("event-name")}</p>`);
+        document.write(`<h1 id="countdown">${formatCountdown(localStorage.getItem("event-time"))}</h1>`)
+
+        setInterval(updateCountdown, 1000);
+    </script>
+    <body>
+        <a href="add_event.html">Edit event</a>
+    </body>
+</html>

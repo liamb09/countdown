@@ -1,0 +1,49 @@
+:root {
+    --background-color: #185e3f;
+    --text-color: white;
+    --text-color-hover: #ddd;
+    font-size: 30px;
+}
+
+* {
+    margin: 0;
+}
+
+html {
+    background: var(--background-color);
+    color: var(--text-color);
+    font-family: Verdana, sans-serif;
+    text-align: center;
+    display: table;
+    margin: auto;
+    height: 100%;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+a:hover {
+    color: var(--text-color-hover);
+}
+
+input {
+    height: 20px;
+    padding: 3px;
+}
+
+#event-name-input {
+    width: 200px;
+}
+
+@media (max-width: 768px) {
+    :root {
+        font-size: 20px;
+    }
+}
