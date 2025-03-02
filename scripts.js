@@ -1,5 +1,9 @@
 function updateDateTime () {
+    const now = new Date();
+    date = now.toISOString().split(".")[0];
+    date = date.split("T")[0] + `T${now.getHours().toString().padStart(2, "0")}:${now.getMinutes().toString().padStart(2, "0")}:${now.getSeconds().toString().padStart(2, "0")}`;
     if (localStorage.getItem("event-name") !== null && document.getElementById("event-name-input") !== null && document.getElementById("event-name-input").value == "") {
+        document.getElementById("event-time").min = date;
         document.getElementById("event-name-input").value = localStorage.getItem("event-name");
     }
     if (localStorage.getItem("event-time") !== null && document.getElementById("event-time") !== null) {
@@ -7,9 +11,6 @@ function updateDateTime () {
         document.getElementById("event-time").value = localStorage.getItem("event-time");
         return;
     }
-    const now = new Date();
-    date = now.toISOString().split(".")[0];
-    date = date.split("T")[0] + `T${now.getHours().toString().padStart(2, "0")}:${now.getMinutes().toString().padStart(2, "0")}:${now.getSeconds().toString().padStart(2, "0")}`;
     if (document.getElementById("event-time") === null) {
         return date;
     }
